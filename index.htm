@@ -285,7 +285,8 @@ materi ketika siswa merasa bingung.
 
 <div class="stats">
 
-<div class="card">
+<div class="card streak-card" onclick="openStreak()">
+
 <h3>🔥 Streak</h3>
 
 <div class="streak">
@@ -293,12 +294,29 @@ materi ketika siswa merasa bingung.
 </div>
 
 <p id="streakText">
-Belajar hari ini untuk menyalakan streak!
+Belajar hari ini untuk menjaga apimu tetap menyala! 🔥
 </p>
 
-<button class="primary" onclick="studyToday()">
+<button class="primary" onclick="event.stopPropagation(); studyToday()">
 Belajar Hari Ini
 </button>
+
+<div id="streakPanel" class="streak-panel">
+
+<div class="fire-big">🔥</div>
+
+<h2 id="streakNumber">0 Hari</h2>
+
+<p>Streak belajar kamu</p>
+
+<h3>Minggu Ini</h3>
+
+<div class="week" id="weekDays"></div>
+
+<p id="weekStatus">Mulai belajar hari ini untuk menyalakan streak!</p>
+
+</div>
+
 </div>
 
 
