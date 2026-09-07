@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>NATIFY — Your TKA Study Buddy</title>
 
@@ -22,7 +25,7 @@ body{
 }
 
 button{
-  border:none;
+  border:0;
   cursor:pointer;
 }
 
@@ -30,46 +33,36 @@ button{
   display:none!important;
 }
 
-/* =========================
-   LANDING PAGE
-========================= */
+/* ===== LANDING ===== */
 
 .hero{
   min-height:100vh;
-  padding:35px 8%;
+  padding:90px 8% 40px;
   background:linear-gradient(135deg,#fffaf0,#fff1a8);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
 }
 
 .logo{
-  position:absolute;
-  top:28px;
-  left:8%;
-  font-size:30px;
-  font-weight:800;
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:45px;
 }
 
 .logo span{
-  color:#f5c400;
+  color:#f2c200;
 }
 
 .badge{
   display:inline-block;
-  width:max-content;
   background:white;
-  border:1px solid #eadb86;
-  padding:8px 15px;
+  padding:9px 16px;
   border-radius:30px;
+  border:1px solid #eadb86;
   margin-bottom:20px;
-  font-size:14px;
 }
 
 .hero h1{
   font-size:clamp(45px,8vw,80px);
   line-height:1;
-  max-width:800px;
   margin-bottom:22px;
 }
 
@@ -78,9 +71,9 @@ button{
 }
 
 .description{
-  max-width:620px;
-  font-size:18px;
+  max-width:650px;
   color:#555;
+  font-size:18px;
   margin-bottom:30px;
 }
 
@@ -92,9 +85,9 @@ button{
 
 .button{
   padding:14px 23px;
-  border-radius:12px;
+  border-radius:14px;
   font-weight:bold;
-  cursor:pointer;
+  font-size:15px;
 }
 
 .primary{
@@ -119,17 +112,13 @@ button{
 .card{
   background:white;
   padding:20px;
-  border-radius:18px;
+  border-radius:20px;
   border:1px solid #eadf9d;
 }
 
 .icon{
-  font-size:27px;
-  margin-bottom:10px;
-}
-
-.card h3{
-  margin-bottom:7px;
+  font-size:28px;
+  margin-bottom:8px;
 }
 
 .card p{
@@ -137,14 +126,12 @@ button{
   font-size:14px;
 }
 
-/* =========================
-   DASHBOARD
-========================= */
+
+/* ===== DASHBOARD ===== */
 
 .dashboard{
   min-height:100vh;
   padding:25px 6%;
-  background:#fffaf0;
 }
 
 .topbar{
@@ -155,7 +142,7 @@ button{
 }
 
 .topbar .logo{
-  position:static;
+  margin:0;
 }
 
 .welcome{
@@ -168,24 +155,18 @@ button{
 
 .welcome h2{
   font-size:30px;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 .welcome p{
-  color:#eee;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
+  color:#ddd;
 }
 
 .dashboard-card{
   background:white;
-  border:1px solid #eadf9d;
-  border-radius:25px;
   padding:25px;
+  border-radius:25px;
+  border:1px solid #eadf9d;
   margin-bottom:20px;
 }
 
@@ -194,13 +175,12 @@ button{
   margin-bottom:15px;
 }
 
-/* =========================
-   STREAK
-========================= */
+
+/* ===== STREAK ===== */
 
 .streak-card{
   cursor:pointer;
-  transition:transform .2s ease;
+  transition:.2s;
 }
 
 .streak-card:active{
@@ -208,8 +188,8 @@ button{
 }
 
 .streak{
-  font-size:48px;
-  font-weight:800;
+  font-size:52px;
+  font-weight:900;
   color:#e0ae00;
   margin:8px 0;
 }
@@ -223,14 +203,12 @@ button{
   background:#202020;
   color:white;
   padding:14px 22px;
-  border-radius:15px;
+  border-radius:14px;
   font-weight:bold;
-  font-size:15px;
 }
 
-/* =========================
-   STREAK PANEL
-========================= */
+
+/* ===== STREAK PANEL ===== */
 
 .streak-panel{
   display:none;
@@ -248,10 +226,12 @@ button{
 
 .fire-big{
   font-size:75px;
+  margin-bottom:5px;
   animation:firePop .5s ease;
 }
 
 @keyframes firePop{
+
   0%{
     transform:scale(.5);
   }
@@ -263,23 +243,23 @@ button{
   100%{
     transform:scale(1);
   }
+
 }
 
 .streak-number{
-  font-size:34px;
-  font-weight:800;
-  margin:5px 0;
+  font-size:35px;
+  font-weight:900;
 }
 
 .week{
   display:grid;
   grid-template-columns:repeat(7,1fr);
   gap:6px;
-  margin:18px 0;
+  margin:20px 0;
 }
 
 .day{
-  background:#eee;
+  background:#eeeeee;
   padding:10px 3px;
   border-radius:13px;
   font-size:12px;
@@ -292,7 +272,7 @@ button{
 }
 
 .day-fire{
-  font-size:21px;
+  font-size:22px;
 }
 
 .day.active{
@@ -304,30 +284,24 @@ button{
 }
 
 .week-status{
-  font-size:14px;
   color:#555;
+  font-size:14px;
 }
 
-/* =========================
-   TARGET
-========================= */
+
+/* ===== TARGET ===== */
 
 .target-list{
   list-style:none;
 }
 
 .target-list li{
-  margin:16px 0;
+  padding:12px 0;
   font-size:17px;
 }
 
-/* =========================
-   PROGRESS
-========================= */
 
-.progress-box{
-  margin-top:10px;
-}
+/* ===== PROGRESS ===== */
 
 .progress-bar{
   width:100%;
@@ -340,12 +314,11 @@ button{
 .progress-fill{
   width:25%;
   height:100%;
-  background:#f5c400;
+  background:#f2c200;
 }
 
-/* =========================
-   SUBJECTS
-========================= */
+
+/* ===== SUBJECT ===== */
 
 .subject-grid{
   display:grid;
@@ -361,47 +334,41 @@ button{
   cursor:pointer;
 }
 
-.subject:hover{
-  transform:translateY(-2px);
+.subject p{
+  color:#666;
+  font-size:14px;
 }
 
-/* =========================
-   NATI
-========================= */
+
+/* ===== NATI ===== */
 
 .nati{
   background:#202020;
   color:white;
-  border-radius:25px;
   padding:25px;
+  border-radius:25px;
   margin-top:20px;
 }
 
 .nati p{
   color:#ddd;
-  margin-bottom:15px;
+  margin:10px 0 18px;
 }
 
 .nati button{
-  background:#f5c400;
-  color:#202020;
+  background:#f2c200;
   padding:13px 20px;
   border-radius:13px;
   font-weight:bold;
 }
 
-/* =========================
-   MOBILE
-========================= */
+
+/* ===== MOBILE ===== */
 
 @media(max-width:700px){
 
   .hero{
-    padding:90px 25px 40px;
-  }
-
-  .logo{
-    left:25px;
+    padding:60px 25px 35px;
   }
 
   .features{
@@ -413,11 +380,11 @@ button{
   }
 
   .welcome{
-    padding:25px;
+    padding:28px;
   }
 
-  .welcome h2{
-    font-size:25px;
+  .subject-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -425,10 +392,6 @@ button{
 @media(max-width:450px){
 
   .features{
-    grid-template-columns:1fr;
-  }
-
-  .subject-grid{
     grid-template-columns:1fr;
   }
 
@@ -445,9 +408,7 @@ button{
 <body>
 
 
-<!-- =========================
-     LANDING PAGE
-========================= -->
+<!-- ===== LANDING ===== -->
 
 <section class="hero" id="landing">
 
@@ -492,52 +453,39 @@ Kenali NATIFY
 <div class="card">
 <div class="icon">📚</div>
 <h3>Materi</h3>
-<p>
-Materi dibuat sederhana agar lebih mudah dipahami.
-</p>
+<p>Materi dibuat sederhana agar mudah dipahami.</p>
 </div>
 
 <div class="card">
 <div class="icon">📝</div>
 <h3>Latihan Soal</h3>
-<p>
-Latihan setelah belajar untuk mengecek pemahaman.
-</p>
+<p>Latihan untuk mengecek pemahamanmu.</p>
 </div>
 
 <div class="card">
 <div class="icon">⏱️</div>
 <h3>Try Out</h3>
-<p>
-Simulasi TKA untuk mengukur kesiapanmu.
-</p>
+<p>Simulasi TKA untuk mengukur kesiapanmu.</p>
 </div>
 
 <div class="card">
 <div class="icon">🤖</div>
 <h3>Ask NATI</h3>
-<p>
-Teman belajar AI untuk membantu menjelaskan materi.
-</p>
+<p>Teman belajar AI untuk membantu menjelaskan materi.</p>
 </div>
 
 </div>
-
-<p style="margin-top:45px;color:#777;font-size:13px;">
-© 2026 NATIFY · Your TKA Study Buddy
-</p>
 
 </section>
 
 
 
-<!-- =========================
-     DASHBOARD
-========================= -->
+<!-- ===== DASHBOARD ===== -->
 
 <section
 class="dashboard hidden"
 id="dashboard">
+
 
 <div class="topbar">
 
@@ -567,7 +515,7 @@ Tenang. Kita belajar sedikit demi sedikit hari ini. 💛
 </div>
 
 
-<!-- STREAK -->
+<!-- ===== STREAK ===== -->
 
 <div
 class="dashboard-card streak-card"
@@ -589,12 +537,10 @@ Mulai belajar hari ini untuk menyalakan apimu!
 
 <button
 class="streak-button"
-onclick="event.stopPropagation(); studyToday()">
+onclick="event.stopPropagation();studyToday()">
 Belajar Hari Ini
 </button>
 
-
-<!-- STREAK PANEL -->
 
 <div
 class="streak-panel"
@@ -635,7 +581,7 @@ Mulai belajar hari ini untuk menyalakan streak!
 
 
 
-<!-- TARGET -->
+<!-- ===== TARGET ===== -->
 
 <div class="dashboard-card">
 
@@ -645,17 +591,11 @@ Mulai belajar hari ini untuk menyalakan streak!
 
 <ul class="target-list">
 
-<li>
-☐ Pelajari 1 materi
-</li>
+<li>☐ Pelajari 1 materi</li>
 
-<li>
-☐ Kerjakan 5 soal
-</li>
+<li>☐ Kerjakan 5 soal</li>
 
-<li>
-☐ Pahami kesalahanmu
-</li>
+<li>☐ Pahami kesalahanmu</li>
 
 </ul>
 
@@ -663,7 +603,7 @@ Mulai belajar hari ini untuk menyalakan streak!
 
 
 
-<!-- PROGRESS -->
+<!-- ===== PROGRESS ===== -->
 
 <div class="dashboard-card">
 
@@ -675,10 +615,10 @@ Mulai belajar hari ini untuk menyalakan streak!
 Kesiapan TKA kamu
 </p>
 
-<div class="progress-box">
-
 <div class="progress-bar">
+
 <div class="progress-fill"></div>
+
 </div>
 
 <p style="margin-top:8px;">
@@ -687,11 +627,9 @@ Kesiapan TKA kamu
 
 </div>
 
-</div>
 
 
-
-<!-- SUBJECT -->
+<!-- ===== SUBJECT ===== -->
 
 <div class="dashboard-card">
 
@@ -701,13 +639,12 @@ Kesiapan TKA kamu
 
 <div class="subject-grid">
 
+
 <div
 class="subject"
 onclick="comingSoon('Bahasa Indonesia')">
 
-<h3>
-📖 Bahasa Indonesia
-</h3>
+<h3>📖 Bahasa Indonesia</h3>
 
 <p>
 Materi dan latihan soal.
@@ -720,9 +657,7 @@ Materi dan latihan soal.
 class="subject"
 onclick="comingSoon('Matematika')">
 
-<h3>
-➗ Matematika
-</h3>
+<h3>➗ Matematika</h3>
 
 <p>
 Konsep, rumus, dan latihan.
@@ -735,9 +670,7 @@ Konsep, rumus, dan latihan.
 class="subject"
 onclick="comingSoon('Bahasa Inggris')">
 
-<h3>
-🇬🇧 Bahasa Inggris
-</h3>
+<h3>🇬🇧 Bahasa Inggris</h3>
 
 <p>
 Reading, vocabulary, dan grammar.
@@ -750,23 +683,21 @@ Reading, vocabulary, dan grammar.
 class="subject"
 onclick="comingSoon('Ekonomi')">
 
-<h3>
-💰 Ekonomi
-</h3>
+<h3>💰 Ekonomi</h3>
 
 <p>
-Konsep ekonomi dan latihan soal.
+Konsep ekonomi dan latihan.
 </p>
 
 </div>
 
-</div>
 
 </div>
+</div>
 
 
 
-<!-- FEATURES -->
+<!-- ===== LATIHAN ===== -->
 
 <div class="dashboard-card">
 
@@ -787,6 +718,9 @@ Mulai Latihan
 </div>
 
 
+
+<!-- ===== SOAL TAHUN LALU ===== -->
+
 <div class="dashboard-card">
 
 <h3>
@@ -794,7 +728,7 @@ Mulai Latihan
 </h3>
 
 <p style="color:#666;margin-bottom:15px;">
-Berlatih dengan soal-soal TKA tahun sebelumnya.
+Berlatih dengan soal TKA tahun sebelumnya.
 </p>
 
 <button
@@ -807,7 +741,7 @@ Lihat Soal
 
 
 
-<!-- NATI -->
+<!-- ===== NATI ===== -->
 
 <div class="nati">
 
@@ -818,7 +752,7 @@ Lihat Soal
 <p>
 Bingung sama materi? Bingung mulai belajar dari mana?
 NATI nantinya bisa menjadi teman belajar yang membantu
-menjelaskan materi dengan bahasa yang lebih sederhana.
+menjelaskan materi dengan bahasa sederhana.
 </p>
 
 <button
@@ -835,419 +769,397 @@ Tanya NATI
 
 <script>
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ===== NAVIGATION ===== */
 
 function showDashboard(){
 
-  document.getElementById("landing")
-  .classList.add("hidden");
+document
+.getElementById("landing")
+.classList.add("hidden");
 
-  document.getElementById("dashboard")
-  .classList.remove("hidden");
+document
+.getElementById("dashboard")
+.classList.remove("hidden");
 
-  updateStreak();
-  updateStreakPanel();
+updateStreak();
+
+updateStreakPanel();
 
 }
 
 
 function showLanding(){
 
-  document.getElementById("dashboard")
-  .classList.add("hidden");
+document
+.getElementById("dashboard")
+.classList.add("hidden");
 
-  document.getElementById("landing")
-  .classList.remove("hidden");
+document
+.getElementById("landing")
+.classList.remove("hidden");
 
 }
 
 
 function showAbout(){
 
-  alert(
-    "NATIFY adalah platform belajar TKA untuk siswa SMA. 💛\n\n" +
-    "Di NATIFY kamu bisa belajar materi, latihan soal, " +
-    "mengikuti try out, melihat perkembangan belajar, " +
-    "dan nantinya ngobrol dengan NATI sebagai AI Study Buddy."
-  );
+alert(
+"NATIFY adalah platform belajar TKA untuk siswa SMA. 💛\n\n"+
+"Di NATIFY kamu bisa belajar materi, latihan soal, "+
+"try out, melihat perkembangan belajar, "+
+"dan nantinya ngobrol dengan NATI."
+);
 
 }
 
 
 function comingSoon(feature){
 
-  alert(
-    "💛 " + feature +
-    " sedang kita siapkan.\n\n" +
-    "Nanti bagian ini akan bisa digunakan!"
-  );
+alert(
+"💛 "+feature+
+" sedang kita siapkan.\n\n"+
+"Nanti bagian ini akan bisa digunakan!"
+);
 
 }
 
 
-/* =========================
-   DATE
-========================= */
-
-function getToday(){
-
-  const now = new Date();
-
-  return (
-    now.getFullYear() +
-    "-" +
-    String(now.getMonth()+1).padStart(2,"0") +
-    "-" +
-    String(now.getDate()).padStart(2,"0")
-  );
-
-}
-
+/* ===== DATE ===== */
 
 function getDateKey(date){
 
-  return (
-    date.getFullYear() +
-    "-" +
-    String(date.getMonth()+1).padStart(2,"0") +
-    "-" +
-    String(date.getDate()).padStart(2,"0")
-  );
+return (
+date.getFullYear()+"-"+
+String(date.getMonth()+1).padStart(2,"0")+"-"+
+String(date.getDate()).padStart(2,"0")
+);
 
 }
 
 
-/* =========================
-   STUDY DATES
-========================= */
+function getToday(){
+
+return getDateKey(new Date());
+
+}
+
+
+/* ===== STUDY DATES ===== */
 
 function getStudyDates(){
 
-  return JSON.parse(
-    localStorage.getItem("natifyStudyDates") || "[]"
-  );
+return JSON.parse(
+localStorage.getItem("natifyStudyDates") || "[]"
+);
 
 }
 
 
 function saveStudyDates(dates){
 
-  localStorage.setItem(
-    "natifyStudyDates",
-    JSON.stringify(dates)
-  );
+localStorage.setItem(
+"natifyStudyDates",
+JSON.stringify(dates)
+);
 
 }
 
 
-/* =========================
-   CALCULATE STREAK
-========================= */
+/* ===== STREAK ===== */
 
 function calculateStreak(){
 
-  const dates = getStudyDates();
+const dates=[
+...new Set(getStudyDates())
+].sort();
 
-  if(dates.length === 0){
-    return 0;
-  }
-
-  const uniqueDates = [...new Set(dates)].sort();
-
-  const today = new Date();
-  const todayKey = getDateKey(today);
-
-  const lastKey =
-    uniqueDates[uniqueDates.length-1];
-
-  const lastDate = new Date(lastKey);
-  const todayDate = new Date(todayKey);
-
-  const difference =
-    Math.floor(
-      (todayDate-lastDate) /
-      (1000*60*60*24)
-    );
+if(dates.length===0){
+return 0;
+}
 
 
-  /*
-    Kalau sudah melewatkan 3 hari,
-    streak dianggap putus.
-  */
+const today=new Date();
 
-  if(difference >= 3){
-    return 0;
-  }
+const lastDate=new Date(
+dates[dates.length-1]
+);
+
+const gap=Math.floor(
+(today-lastDate)/
+(1000*60*60*24)
+);
 
 
-  /*
-    Hitung hari belajar berturut-turut
-    dari hari terakhir belajar.
-  */
+/*
+Kalau sudah 3 hari tidak belajar,
+streak kembali menjadi 0.
+*/
 
-  let streak = 1;
+if(gap>=3){
+return 0;
+}
 
-  for(let i=uniqueDates.length-1;i>0;i--){
 
-    const current =
-      new Date(uniqueDates[i]);
+/*
+Hitung hari belajar berturut-turut.
+*/
 
-    const previous =
-      new Date(uniqueDates[i-1]);
+let streak=1;
 
-    const gap =
-      Math.floor(
-        (current-previous) /
-        (1000*60*60*24)
-      );
 
-    if(gap === 1){
-      streak++;
-    }else{
-      break;
-    }
+for(
+let i=dates.length-1;
+i>0;
+i--
+){
 
-  }
+const current=new Date(
+dates[i]
+);
 
-  return streak;
+const previous=new Date(
+dates[i-1]
+);
+
+const difference=Math.floor(
+(current-previous)/
+(1000*60*60*24)
+);
+
+if(difference===1){
+
+streak++;
+
+}else{
+
+break;
+
+}
 
 }
 
 
-/* =========================
-   STUDY TODAY
-========================= */
+return streak;
+
+}
+
+
+/* ===== BELAJAR HARI INI ===== */
 
 function studyToday(){
 
-  const today = getToday();
+const today=getToday();
 
-  let dates = getStudyDates();
-
-
-  if(!dates.includes(today)){
-
-    dates.push(today);
-
-    saveStudyDates(dates);
-
-  }
+let dates=getStudyDates();
 
 
-  updateStreak();
-  updateStreakPanel();
+if(!dates.includes(today)){
 
+dates.push(today);
 
-  document.getElementById("streakText")
-  .innerText =
-  "🔥 Kamu sudah belajar hari ini! Pertahankan apinya!";
-
-
-  alert(
-    "🔥 Belajar hari ini tercatat!\n\n" +
-    "Streak kamu sudah diperbarui."
-  );
+saveStudyDates(dates);
 
 }
 
 
-/* =========================
-   UPDATE STREAK CARD
-========================= */
+updateStreak();
+
+updateStreakPanel();
+
+
+document.getElementById(
+"streakText"
+).innerText=
+"🔥 Kamu sudah belajar hari ini! Pertahankan apinya!";
+
+
+alert(
+"🔥 Belajar hari ini tercatat!\n\n"+
+"Streak kamu sudah diperbarui."
+);
+
+}
+
+
+/* ===== UPDATE CARD ===== */
 
 function updateStreak(){
 
-  const streak =
-    calculateStreak();
+const streak=calculateStreak();
 
-  document.getElementById("streak")
-  .innerText = streak;
-
-
-  const dates =
-    getStudyDates();
-
-  const today =
-    getToday();
+document.getElementById(
+"streak"
+).innerText=streak;
 
 
-  if(dates.includes(today)){
+const dates=getStudyDates();
 
-    document.getElementById("streakText")
-    .innerText =
-    "🔥 Kamu sudah belajar hari ini!";
+const today=getToday();
 
-  }else if(streak > 0){
 
-    document.getElementById("streakText")
-    .innerText =
-    "Belajar hari ini untuk menjaga apimu tetap menyala!";
+if(dates.includes(today)){
 
-  }else{
+document.getElementById(
+"streakText"
+).innerText=
+"🔥 Kamu sudah belajar hari ini!";
 
-    document.getElementById("streakText")
-    .innerText =
-    "Mulai belajar hari ini untuk menyalakan apimu!";
+}
 
-  }
+else if(streak>0){
+
+document.getElementById(
+"streakText"
+).innerText=
+"Belajar hari ini untuk menjaga apimu tetap menyala!";
+
+}
+
+else{
+
+document.getElementById(
+"streakText"
+).innerText=
+"Mulai belajar hari ini untuk menyalakan apimu!";
+
+}
 
 }
 
 
-/* =========================
-   OPEN STREAK PANEL
-========================= */
+/* ===== OPEN PANEL ===== */
 
 function openStreak(){
 
-  const panel =
-    document.getElementById("streakPanel");
+const panel=
+document.getElementById(
+"streakPanel"
+);
 
 
-  if(panel.classList.contains("show")){
+if(panel.classList.contains("show")){
 
-    panel.classList.remove("show");
+panel.classList.remove("show");
 
-    return;
+}else{
 
-  }
+panel.classList.add("show");
 
+updateStreakPanel();
 
-  panel.classList.add("show");
-
-  updateStreakPanel();
+}
 
 }
 
 
-/* =========================
-   UPDATE STREAK PANEL
-========================= */
+/* ===== UPDATE PANEL ===== */
 
 function updateStreakPanel(){
 
-  const streak =
-    calculateStreak();
+const streak=calculateStreak();
 
 
-  document.getElementById(
-    "streakNumber"
-  ).innerText =
-    streak + " Hari";
+document.getElementById(
+"streakNumber"
+).innerText=
+streak+" Hari";
 
 
-  const weekDays =
-    document.getElementById("weekDays");
+const weekDays=
+document.getElementById(
+"weekDays"
+);
 
 
-  const names =
-    ["Sen","Sel","Rab","Kam","Jum","Sab","Min"];
+const names=[
+"Sen",
+"Sel",
+"Rab",
+"Kam",
+"Jum",
+"Sab",
+"Min"
+];
 
 
-  const today =
-    new Date();
+const today=new Date();
+
+const jsDay=today.getDay();
 
 
-  const currentDay =
-    today.getDay();
+const todayIndex=
+jsDay===0
+?6
+:jsDay-1;
 
 
-  /*
-    JavaScript:
-    Minggu = 0
-    Senin = 1
-
-    Kita ubah:
-    Senin = 0
-    Minggu = 6
-  */
-
-  const todayIndex =
-    currentDay === 0
-    ? 6
-    : currentDay - 1;
+const studyDates=
+getStudyDates();
 
 
-  let html = "";
+let html="";
 
 
-  const studyDates =
-    getStudyDates();
+for(
+let i=0;
+i<7;
+i++
+){
+
+const date=new Date(today);
 
 
-  for(let i=0;i<7;i++){
-
-    const date =
-      new Date(today);
-
-
-    date.setDate(
-      today.getDate() -
-      (todayIndex-i)
-    );
+date.setDate(
+today.getDate()-
+(todayIndex-i)
+);
 
 
-    const key =
-      getDateKey(date);
+const key=getDateKey(date);
+
+const studied=
+studyDates.includes(key);
+
+const isToday=
+key===getToday();
 
 
-    const studied =
-      studyDates.includes(key);
+html+=`
 
+<div class="day
+${studied?"active":""}
+${isToday?"today":""}">
 
-    const isToday =
-      key === getToday();
+<span class="day-name">
+${names[i]}
+</span>
 
+<span class="day-fire">
+${studied?"🔥":"○"}
+</span>
 
-    html += `
+</div>
 
-      <div class="day
-        ${studied ? "active" : ""}
-        ${isToday ? "today" : ""}
-      ">
-
-        <span class="day-name">
-          ${names[i]}
-        </span>
-
-        <span class="day-fire">
-          ${studied ? "🔥" : "○"}
-        </span>
-
-      </div>
-
-    `;
-
-  }
-
-
-  weekDays.innerHTML = html;
-
-
-  if(streak > 0){
-
-    document.getElementById(
-      "weekStatus"
-    ).innerText =
-    "🔥 Pertahankan streak kamu!";
-
-  }else{
-
-    document.getElementById(
-      "weekStatus"
-    ).innerText =
-    "Mulai belajar hari ini untuk menyalakan streak!";
-
-  }
+`;
 
 }
 
 
-/* =========================
-   START
-========================= */
+weekDays.innerHTML=html;
+
+
+document.getElementById(
+"weekStatus"
+).innerText=
+
+streak>0
+?"🔥 Pertahankan streak kamu!"
+:"Mulai belajar hari ini untuk menyalakan streak!";
+
+}
+
+
+/* ===== START ===== */
 
 updateStreak();
 
