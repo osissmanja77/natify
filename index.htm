@@ -647,6 +647,92 @@ alert(
 }
 
 </script>
+<script>
+function openStreak(){
+  const panel = document.getElementById("streakPanel");
 
+  if(panel.style.display === "block"){
+    panel.style.display = "none";
+    return;
+  }
+
+  panel.style.display = "block";
+  updateStreakPanel();
+}
+
+function updateStreakPanel(){
+  const streak = Number(localStorage.getItem("natifyStreak") || 0);
+
+  document.getElementById("streakNumber").innerText =
+    streak + " Hari";
+
+  const weekDays = document.getElementById("weekDays");
+
+  const names = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
+
+  const today = new Date();
+  const day = today.getDay();
+
+  // Senin = 0 ... Minggu = 6
+  const todayIndex = day === 0 ? 6 : day - 1;
+
+  let html = "";
+
+  for(let i = 0; i < 7; i++){
+
+    const date = new Date(today);
+    date.setDate(today.getDate() - (todayIndex - i));
+
+    const key =
+      "natifyStudy_" +
+      date.getFullYear() + "-" +
+      String(date.getMonth()+1).padStart(2,"0") + "-" +
+      String(date.getDate()).padStart(2,"0");
+
+    const studied = localStorage.getItem(key) === "yes";
+
+    html += `
+      <div class="day ${studied ? "active" : ""}">
+        <span>${names[i]}</span>
+        <b>${studied ? "🔥" : "○"}</b>
+      </div>
+    `;
+  }
+
+  weekDays.innerHTML = html;
+
+  document.getElementById("weekStatus").innerText =
+    streak > 0
+      ? "🔥 Pertahankan streak kamu!"
+      : "Mulai belajar hari ini untuk menyalakan streak!";
+}
+
+function markStudyToday(){
+
+  const today = new Date();
+
+  const key =
+    "natifyStudy_" +
+    today.getFullYear() + "-" +
+    String(today.getMonth()+1).padStart(2,"0") + "-" +
+    String(today.getDate()).padStart(2,"0");
+
+  // Kalau hari ini belum belajar
+  if(localStorage.getItem(key) !== "yes"){
+
+    localStorage.setItem(key, "yes");
+
+    let streak =
+      Number(localStorage.getItem("natifyStreak") || 0);
+
+    streak++;
+
+    localStorage.setItem("natifyStreak", streak);
+  }
+
+  updateStreak();
+  updateStreakPanel();
+}
+</script>
 </body>
 </html>
