@@ -177,6 +177,83 @@ nav{display:none}
 .grid,.stats{grid-template-columns:1fr}
 .secondary{margin-left:0;margin-top:10px}
 }
+  .streak-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.streak-card:active {
+  transform: scale(0.98);
+}
+
+.streak-panel {
+  display: none;
+  margin-top: 20px;
+  padding: 22px;
+  background: #fff9e8;
+  border-radius: 22px;
+  text-align: center;
+  border: 2px solid #f0d95c;
+}
+
+.streak-panel.show {
+  display: block;
+}
+
+.fire-big {
+  font-size: 70px;
+  animation: firePop 0.5s ease;
+}
+
+@keyframes firePop {
+  0% {
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.streak-panel h2 {
+  font-size: 32px;
+  margin: 5px 0;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin: 15px 0;
+}
+
+.day {
+  padding: 8px 3px;
+  border-radius: 12px;
+  background: #eeeeee;
+  font-size: 12px;
+}
+
+.day .day-name {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.day .day-fire {
+  font-size: 22px;
+}
+
+.day.active {
+  background: #fff0a8;
+}
+
+.week-status {
+  font-size: 14px;
+  margin-top: 12px;
+}
 </style>
 </head>
 
