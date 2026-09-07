@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NATIFY — Your TKA Study Buddy</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -33,11 +29,11 @@ button{
   display:none!important;
 }
 
-/* ===== LANDING ===== */
+/* ================= LANDING ================= */
 
 .hero{
   min-height:100vh;
-  padding:90px 8% 40px;
+  padding:70px 8% 40px;
   background:linear-gradient(135deg,#fffaf0,#fff1a8);
 }
 
@@ -126,8 +122,7 @@ button{
   font-size:14px;
 }
 
-
-/* ===== DASHBOARD ===== */
+/* ================= DASHBOARD ================= */
 
 .dashboard{
   min-height:100vh;
@@ -175,16 +170,10 @@ button{
   margin-bottom:15px;
 }
 
-
-/* ===== STREAK ===== */
+/* ================= STREAK ================= */
 
 .streak-card{
-  cursor:pointer;
-  transition:.2s;
-}
-
-.streak-card:active{
-  transform:scale(.98);
+  position:relative;
 }
 
 .streak{
@@ -207,8 +196,19 @@ button{
   font-weight:bold;
 }
 
+.streak-open-button{
+  width:100%;
+  text-align:left;
+  background:transparent;
+  padding:0;
+  color:#202020;
+}
 
-/* ===== STREAK PANEL ===== */
+.streak-open-button h3{
+  margin-bottom:15px;
+}
+
+/* PANEL */
 
 .streak-panel{
   display:none;
@@ -227,23 +227,6 @@ button{
 .fire-big{
   font-size:75px;
   margin-bottom:5px;
-  animation:firePop .5s ease;
-}
-
-@keyframes firePop{
-
-  0%{
-    transform:scale(.5);
-  }
-
-  70%{
-    transform:scale(1.15);
-  }
-
-  100%{
-    transform:scale(1);
-  }
-
 }
 
 .streak-number{
@@ -288,8 +271,7 @@ button{
   font-size:14px;
 }
 
-
-/* ===== TARGET ===== */
+/* ================= TARGET ================= */
 
 .target-list{
   list-style:none;
@@ -300,8 +282,7 @@ button{
   font-size:17px;
 }
 
-
-/* ===== PROGRESS ===== */
+/* ================= PROGRESS ================= */
 
 .progress-bar{
   width:100%;
@@ -317,8 +298,7 @@ button{
   background:#f2c200;
 }
 
-
-/* ===== SUBJECT ===== */
+/* ================= SUBJECT ================= */
 
 .subject-grid{
   display:grid;
@@ -339,8 +319,7 @@ button{
   font-size:14px;
 }
 
-
-/* ===== NATI ===== */
+/* ================= NATI ================= */
 
 .nati{
   background:#202020;
@@ -362,8 +341,7 @@ button{
   font-weight:bold;
 }
 
-
-/* ===== MOBILE ===== */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -400,766 +378,814 @@ button{
   }
 
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ===== LANDING ===== -->
+<!-- ================= LANDING ================= -->
 
 <section class="hero" id="landing">
 
-<div class="logo">
-NAT<span>IFY</span>
-</div>
+  <div class="logo">
+    NAT<span>IFY</span>
+  </div>
 
-<div class="badge">
-💛 Your TKA Study Buddy
-</div>
+  <div class="badge">
+    💛 Your TKA Study Buddy
+  </div>
 
-<h1>
-Belajar TKA<br>
-jadi lebih <span>terarah.</span>
-</h1>
+  <h1>
+    Belajar TKA<br>
+    jadi lebih <span>terarah.</span>
+  </h1>
 
-<p class="description">
-NATIFY membantu siswa SMA mempersiapkan TKA melalui
-materi, latihan soal, try out, pemantauan progres,
-dan AI Study Buddy dalam satu tempat.
-</p>
+  <p class="description">
+    NATIFY membantu siswa SMA mempersiapkan TKA melalui materi,
+    latihan soal, try out, pemantauan progres, dan AI Study Buddy
+    dalam satu tempat.
+  </p>
 
-<div class="buttons">
+  <div class="buttons">
 
-<button
-class="button primary"
-onclick="showDashboard()">
-Mulai Belajar →
-</button>
+    <button class="button primary" onclick="showDashboard()">
+      Mulai Belajar →
+    </button>
 
-<button
-class="button secondary"
-onclick="showAbout()">
-Kenali NATIFY
-</button>
+    <button class="button secondary" onclick="showAbout()">
+      Kenali NATIFY
+    </button>
 
-</div>
+  </div>
 
+  <div class="features">
 
-<div class="features">
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Materi</h3>
+      <p>Materi dibuat sederhana agar mudah dipahami.</p>
+    </div>
 
-<div class="card">
-<div class="icon">📚</div>
-<h3>Materi</h3>
-<p>Materi dibuat sederhana agar mudah dipahami.</p>
-</div>
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Latihan Soal</h3>
+      <p>Latihan untuk mengecek pemahamanmu.</p>
+    </div>
 
-<div class="card">
-<div class="icon">📝</div>
-<h3>Latihan Soal</h3>
-<p>Latihan untuk mengecek pemahamanmu.</p>
-</div>
+    <div class="card">
+      <div class="icon">⏱️</div>
+      <h3>Try Out</h3>
+      <p>Simulasi TKA untuk mengukur kesiapanmu.</p>
+    </div>
 
-<div class="card">
-<div class="icon">⏱️</div>
-<h3>Try Out</h3>
-<p>Simulasi TKA untuk mengukur kesiapanmu.</p>
-</div>
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>Ask NATI</h3>
+      <p>Teman belajar AI untuk membantu menjelaskan materi.</p>
+    </div>
 
-<div class="card">
-<div class="icon">🤖</div>
-<h3>Ask NATI</h3>
-<p>Teman belajar AI untuk membantu menjelaskan materi.</p>
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
+<!-- ================= DASHBOARD ================= -->
 
-<!-- ===== DASHBOARD ===== -->
+<section class="dashboard hidden" id="dashboard">
 
-<section
-class="dashboard hidden"
-id="dashboard">
+  <div class="topbar">
 
+    <div class="logo">
+      NAT<span>IFY</span>
+    </div>
 
-<div class="topbar">
+    <button class="button secondary" onclick="showLanding()">
+      ← Beranda
+    </button>
 
-<div class="logo">
-NAT<span>IFY</span>
-</div>
+  </div>
 
-<button
-class="button secondary"
-onclick="showLanding()">
-← Beranda
-</button>
 
-</div>
+  <div class="welcome">
 
+    <h2>
+      Halo, pejuang TKA! 👋
+    </h2>
 
-<div class="welcome">
+    <p>
+      Tenang. Kita belajar sedikit demi sedikit hari ini. 💛
+    </p>
 
-<h2>
-Halo, pejuang TKA! 👋
-</h2>
+  </div>
 
-<p>
-Tenang. Kita belajar sedikit demi sedikit hari ini. 💛
-</p>
 
-</div>
+  <!-- ================= STREAK ================= -->
 
+  <div class="dashboard-card streak-card">
 
-<!-- ===== STREAK ===== -->
+    <button
+      class="streak-open-button"
+      onclick="openStreak()"
+    >
 
-<div
-class="dashboard-card streak-card"
-onclick="openStreak()">
+      <h3>
+        🔥 Streak
+      </h3>
 
-<h3>
-🔥 Streak
-</h3>
+      <div class="streak">
+        <span id="streak">0</span> hari
+      </div>
 
-<div class="streak">
-<span id="streak">0</span> hari
-</div>
+    </button>
 
-<p
-class="streak-text"
-id="streakText">
-Mulai belajar hari ini untuk menyalakan apimu!
-</p>
 
-<button
-class="streak-button"
-onclick="event.stopPropagation();studyToday()">
-Belajar Hari Ini
-</button>
+    <p
+      class="streak-text"
+      id="streakText"
+    >
+      Mulai belajar hari ini untuk menyalakan apimu!
+    </p>
 
 
-<div
-class="streak-panel"
-id="streakPanel">
+    <button
+      class="streak-button"
+      onclick="studyToday()"
+    >
+      Belajar Hari Ini
+    </button>
 
-<div class="fire-big">
-🔥
-</div>
 
-<div
-class="streak-number"
-id="streakNumber">
-0 Hari
-</div>
+    <!-- PANEL STREAK -->
 
-<p>
-Streak belajar kamu
-</p>
+    <div
+      class="streak-panel"
+      id="streakPanel"
+    >
 
-<h3 style="margin-top:20px;">
-Minggu Ini
-</h3>
+      <div class="fire-big">
+        🔥
+      </div>
 
-<div
-class="week"
-id="weekDays">
-</div>
+      <div
+        class="streak-number"
+        id="streakNumber"
+      >
+        0 Hari
+      </div>
 
-<p
-class="week-status"
-id="weekStatus">
-Mulai belajar hari ini untuk menyalakan streak!
-</p>
+      <p>
+        Streak belajar kamu
+      </p>
 
-</div>
+      <h3 style="margin-top:20px;">
+        Minggu Ini
+      </h3>
 
-</div>
+      <div
+        class="week"
+        id="weekDays"
+      ></div>
 
+      <p
+        class="week-status"
+        id="weekStatus"
+      >
+        Mulai belajar hari ini untuk menyalakan streak!
+      </p>
 
+    </div>
 
-<!-- ===== TARGET ===== -->
+  </div>
 
-<div class="dashboard-card">
 
-<h3>
-🎯 Target Hari Ini
-</h3>
+  <!-- ================= TARGET ================= -->
 
-<ul class="target-list">
+  <div class="dashboard-card">
 
-<li>☐ Pelajari 1 materi</li>
+    <h3>
+      🎯 Target Hari Ini
+    </h3>
 
-<li>☐ Kerjakan 5 soal</li>
+    <ul class="target-list">
 
-<li>☐ Pahami kesalahanmu</li>
+      <li>
+        ☐ Pelajari 1 materi
+      </li>
 
-</ul>
+      <li>
+        ☐ Kerjakan 5 soal
+      </li>
 
-</div>
+      <li>
+        ☐ Pahami kesalahanmu
+      </li>
 
+    </ul>
 
+  </div>
 
-<!-- ===== PROGRESS ===== -->
 
-<div class="dashboard-card">
+  <!-- ================= PROGRESS ================= -->
 
-<h3>
-📈 Progress Belajar
-</h3>
+  <div class="dashboard-card">
 
-<p style="color:#666;margin-bottom:10px;">
-Kesiapan TKA kamu
-</p>
+    <h3>
+      📈 Progress Belajar
+    </h3>
 
-<div class="progress-bar">
+    <p style="color:#666;margin-bottom:10px;">
+      Kesiapan TKA kamu
+    </p>
 
-<div class="progress-fill"></div>
+    <div class="progress-bar">
 
-</div>
+      <div class="progress-fill"></div>
 
-<p style="margin-top:8px;">
-25% selesai
-</p>
+    </div>
 
-</div>
+    <p style="margin-top:8px;">
+      25% selesai
+    </p>
 
+  </div>
 
 
-<!-- ===== SUBJECT ===== -->
+  <!-- ================= SUBJECT ================= -->
 
-<div class="dashboard-card">
+  <div class="dashboard-card">
 
-<h3>
-📚 Pilih Mata Pelajaran
-</h3>
+    <h3>
+      📚 Pilih Mata Pelajaran
+    </h3>
 
-<div class="subject-grid">
+    <div class="subject-grid">
 
+      <div
+        class="subject"
+        onclick="comingSoon('Bahasa Indonesia')"
+      >
 
-<div
-class="subject"
-onclick="comingSoon('Bahasa Indonesia')">
+        <h3>
+          📖 Bahasa Indonesia
+        </h3>
 
-<h3>📖 Bahasa Indonesia</h3>
+        <p>
+          Materi dan latihan soal.
+        </p>
 
-<p>
-Materi dan latihan soal.
-</p>
+      </div>
 
-</div>
 
+      <div
+        class="subject"
+        onclick="comingSoon('Matematika')"
+      >
 
-<div
-class="subject"
-onclick="comingSoon('Matematika')">
+        <h3>
+          ➗ Matematika
+        </h3>
 
-<h3>➗ Matematika</h3>
+        <p>
+          Konsep, rumus, dan latihan.
+        </p>
 
-<p>
-Konsep, rumus, dan latihan.
-</p>
+      </div>
 
-</div>
 
+      <div
+        class="subject"
+        onclick="comingSoon('Bahasa Inggris')"
+      >
 
-<div
-class="subject"
-onclick="comingSoon('Bahasa Inggris')">
+        <h3>
+          🇬🇧 Bahasa Inggris
+        </h3>
 
-<h3>🇬🇧 Bahasa Inggris</h3>
+        <p>
+          Reading, vocabulary, dan grammar.
+        </p>
 
-<p>
-Reading, vocabulary, dan grammar.
-</p>
+      </div>
 
-</div>
 
+      <div
+        class="subject"
+        onclick="comingSoon('Ekonomi')"
+      >
 
-<div
-class="subject"
-onclick="comingSoon('Ekonomi')">
+        <h3>
+          💰 Ekonomi
+        </h3>
 
-<h3>💰 Ekonomi</h3>
+        <p>
+          Konsep ekonomi dan latihan.
+        </p>
 
-<p>
-Konsep ekonomi dan latihan.
-</p>
+      </div>
 
-</div>
+    </div>
 
+  </div>
 
-</div>
-</div>
 
+  <!-- ================= LATIHAN ================= -->
 
+  <div class="dashboard-card">
 
-<!-- ===== LATIHAN ===== -->
+    <h3>
+      📝 Latihan & Soal
+    </h3>
 
-<div class="dashboard-card">
+    <p style="color:#666;margin-bottom:15px;">
+      Pilih latihan yang ingin kamu kerjakan.
+    </p>
 
-<h3>
-📝 Latihan & Soal
-</h3>
+    <button
+      class="button primary"
+      onclick="comingSoon('Latihan Soal')"
+    >
+      Mulai Latihan
+    </button>
 
-<p style="color:#666;margin-bottom:15px;">
-Pilih latihan yang ingin kamu kerjakan.
-</p>
+  </div>
 
-<button
-class="button primary"
-onclick="comingSoon('Latihan Soal')">
-Mulai Latihan
-</button>
 
-</div>
+  <!-- ================= SOAL TAHUN LALU ================= -->
 
+  <div class="dashboard-card">
 
+    <h3>
+      📜 Soal Tahun Lalu
+    </h3>
 
-<!-- ===== SOAL TAHUN LALU ===== -->
+    <p style="color:#666;margin-bottom:15px;">
+      Berlatih dengan soal TKA tahun sebelumnya.
+    </p>
 
-<div class="dashboard-card">
+    <button
+      class="button primary"
+      onclick="comingSoon('Soal Tahun Lalu')"
+    >
+      Lihat Soal
+    </button>
 
-<h3>
-📜 Soal Tahun Lalu
-</h3>
+  </div>
 
-<p style="color:#666;margin-bottom:15px;">
-Berlatih dengan soal TKA tahun sebelumnya.
-</p>
 
-<button
-class="button primary"
-onclick="comingSoon('Soal Tahun Lalu')">
-Lihat Soal
-</button>
+  <!-- ================= NATI ================= -->
 
-</div>
+  <div class="nati">
 
+    <h2>
+      🤖 NATI — AI Study Buddy
+    </h2>
 
+    <p>
+      Bingung sama materi? Bingung mulai belajar dari mana?
+      NATI nantinya bisa menjadi teman belajar yang membantu
+      menjelaskan materi dengan bahasa sederhana.
+    </p>
 
-<!-- ===== NATI ===== -->
+    <button onclick="comingSoon('NATI AI')">
+      Tanya NATI
+    </button>
 
-<div class="nati">
-
-<h2>
-🤖 NATI — AI Study Buddy
-</h2>
-
-<p>
-Bingung sama materi? Bingung mulai belajar dari mana?
-NATI nantinya bisa menjadi teman belajar yang membantu
-menjelaskan materi dengan bahasa sederhana.
-</p>
-
-<button
-onclick="comingSoon('NATI AI')">
-Tanya NATI
-</button>
-
-</div>
-
+  </div>
 
 </section>
-
 
 
 <script>
 
-/* ===== NAVIGATION ===== */
+/* ================= NAVIGASI ================= */
 
 function showDashboard(){
 
-document
-.getElementById("landing")
-.classList.add("hidden");
+  document
+    .getElementById("landing")
+    .classList.add("hidden");
 
-document
-.getElementById("dashboard")
-.classList.remove("hidden");
+  document
+    .getElementById("dashboard")
+    .classList.remove("hidden");
 
-updateStreak();
-
-updateStreakPanel();
+  updateStreak();
+  updateStreakPanel();
 
 }
 
 
 function showLanding(){
 
-document
-.getElementById("dashboard")
-.classList.add("hidden");
+  document
+    .getElementById("dashboard")
+    .classList.add("hidden");
 
-document
-.getElementById("landing")
-.classList.remove("hidden");
+  document
+    .getElementById("landing")
+    .classList.remove("hidden");
 
 }
 
+
+/* ================= ABOUT ================= */
 
 function showAbout(){
 
-alert(
-"NATIFY adalah platform belajar TKA untuk siswa SMA. 💛\n\n"+
-"Di NATIFY kamu bisa belajar materi, latihan soal, "+
-"try out, melihat perkembangan belajar, "+
-"dan nantinya ngobrol dengan NATI."
-);
+  alert(
+    "NATIFY adalah platform belajar TKA untuk siswa SMA. 💛\n\n"+
+    "Di NATIFY kamu bisa belajar materi, latihan soal, try out, "+
+    "melihat perkembangan belajar, dan nantinya ngobrol dengan NATI."
+  );
 
 }
 
+
+/* ================= COMING SOON ================= */
 
 function comingSoon(feature){
 
-alert(
-"💛 "+feature+
-" sedang kita siapkan.\n\n"+
-"Nanti bagian ini akan bisa digunakan!"
-);
+  alert(
+    "💛 " + feature +
+    " sedang kita siapkan.\n\n"+
+    "Nanti bagian ini akan bisa digunakan!"
+  );
 
 }
 
 
-/* ===== DATE ===== */
+/* ================= TANGGAL ================= */
 
 function getDateKey(date){
 
-return (
-date.getFullYear()+"-"+
-String(date.getMonth()+1).padStart(2,"0")+"-"+
-String(date.getDate()).padStart(2,"0")
-);
+  return (
+    date.getFullYear() +
+    "-" +
+    String(date.getMonth()+1).padStart(2,"0") +
+    "-" +
+    String(date.getDate()).padStart(2,"0")
+  );
 
 }
 
 
 function getToday(){
 
-return getDateKey(new Date());
+  return getDateKey(new Date());
 
 }
 
 
-/* ===== STUDY DATES ===== */
+/* ================= DATA BELAJAR ================= */
 
 function getStudyDates(){
 
-return JSON.parse(
-localStorage.getItem("natifyStudyDates") || "[]"
-);
+  try{
+
+    return JSON.parse(
+      localStorage.getItem("natifyStudyDates") || "[]"
+    );
+
+  }catch(error){
+
+    return [];
+
+  }
 
 }
 
 
 function saveStudyDates(dates){
 
-localStorage.setItem(
-"natifyStudyDates",
-JSON.stringify(dates)
-);
+  localStorage.setItem(
+    "natifyStudyDates",
+    JSON.stringify(dates)
+  );
 
 }
 
 
-/* ===== STREAK ===== */
+/* ================= HITUNG STREAK ================= */
 
 function calculateStreak(){
 
-const dates=[
-...new Set(getStudyDates())
-].sort();
+  const dates = [
+    ...new Set(getStudyDates())
+  ].sort();
 
-if(dates.length===0){
-return 0;
+
+  if(dates.length === 0){
+    return 0;
+  }
+
+
+  const today = new Date();
+
+  today.setHours(0,0,0,0);
+
+
+  let lastDate = new Date(
+    dates[dates.length - 1]
+  );
+
+  lastDate.setHours(0,0,0,0);
+
+
+  const gap = Math.round(
+    (today - lastDate) /
+    (1000 * 60 * 60 * 24)
+  );
+
+
+  /*
+    Kalau terakhir belajar bukan hari ini
+    atau kemarin, streak dianggap selesai.
+  */
+
+  if(gap > 1){
+    return 0;
+  }
+
+
+  let streak = 1;
+
+
+  for(
+    let i = dates.length - 1;
+    i > 0;
+    i--
+  ){
+
+    const current =
+      new Date(dates[i]);
+
+    const previous =
+      new Date(dates[i-1]);
+
+
+    current.setHours(0,0,0,0);
+    previous.setHours(0,0,0,0);
+
+
+    const difference = Math.round(
+      (current - previous) /
+      (1000 * 60 * 60 * 24)
+    );
+
+
+    if(difference === 1){
+
+      streak++;
+
+    }else{
+
+      break;
+
+    }
+
+  }
+
+
+  return streak;
+
 }
 
 
-const today=new Date();
-
-const lastDate=new Date(
-dates[dates.length-1]
-);
-
-const gap=Math.floor(
-(today-lastDate)/
-(1000*60*60*24)
-);
-
-
-/*
-Kalau sudah 3 hari tidak belajar,
-streak kembali menjadi 0.
-*/
-
-if(gap>=3){
-return 0;
-}
-
-
-/*
-Hitung hari belajar berturut-turut.
-*/
-
-let streak=1;
-
-
-for(
-let i=dates.length-1;
-i>0;
-i--
-){
-
-const current=new Date(
-dates[i]
-);
-
-const previous=new Date(
-dates[i-1]
-);
-
-const difference=Math.floor(
-(current-previous)/
-(1000*60*60*24)
-);
-
-if(difference===1){
-
-streak++;
-
-}else{
-
-break;
-
-}
-
-}
-
-
-return streak;
-
-}
-
-
-/* ===== BELAJAR HARI INI ===== */
+/* ================= BELAJAR HARI INI ================= */
 
 function studyToday(){
 
-const today=getToday();
+  const today = getToday();
 
-let dates=getStudyDates();
+  let dates = getStudyDates();
 
 
-if(!dates.includes(today)){
+  if(!dates.includes(today)){
 
-dates.push(today);
+    dates.push(today);
 
-saveStudyDates(dates);
+    saveStudyDates(dates);
+
+  }
+
+
+  updateStreak();
+
+  updateStreakPanel();
+
+
+  document.getElementById(
+    "streakText"
+  ).innerText =
+    "🔥 Kamu sudah belajar hari ini! Pertahankan apinya!";
+
+
+  alert(
+    "🔥 Belajar hari ini tercatat!\n\n"+
+    "Streak kamu sudah diperbarui."
+  );
 
 }
 
 
-updateStreak();
-
-updateStreakPanel();
-
-
-document.getElementById(
-"streakText"
-).innerText=
-"🔥 Kamu sudah belajar hari ini! Pertahankan apinya!";
-
-
-alert(
-"🔥 Belajar hari ini tercatat!\n\n"+
-"Streak kamu sudah diperbarui."
-);
-
-}
-
-
-/* ===== UPDATE CARD ===== */
+/* ================= UPDATE STREAK ================= */
 
 function updateStreak(){
 
-const streak=calculateStreak();
-
-document.getElementById(
-"streak"
-).innerText=streak;
+  const streak =
+    calculateStreak();
 
 
-const dates=getStudyDates();
+  document.getElementById(
+    "streak"
+  ).innerText = streak;
 
-const today=getToday();
+
+  const dates =
+    getStudyDates();
+
+  const today =
+    getToday();
 
 
-if(dates.includes(today)){
+  if(dates.includes(today)){
 
-document.getElementById(
-"streakText"
-).innerText=
-"🔥 Kamu sudah belajar hari ini!";
+    document.getElementById(
+      "streakText"
+    ).innerText =
+      "🔥 Kamu sudah belajar hari ini! Pertahankan apinya!";
+
+  }
+
+  else if(streak > 0){
+
+    document.getElementById(
+      "streakText"
+    ).innerText =
+      "Belajar hari ini untuk menjaga apimu tetap menyala!";
+
+  }
+
+  else{
+
+    document.getElementById(
+      "streakText"
+    ).innerText =
+      "Mulai belajar hari ini untuk menyalakan apimu!";
+
+  }
 
 }
 
-else if(streak>0){
 
-document.getElementById(
-"streakText"
-).innerText=
-"Belajar hari ini untuk menjaga apimu tetap menyala!";
-
-}
-
-else{
-
-document.getElementById(
-"streakText"
-).innerText=
-"Mulai belajar hari ini untuk menyalakan apimu!";
-
-}
-
-}
-
-
-/* ===== OPEN PANEL ===== */
+/* ================= BUKA PANEL ================= */
 
 function openStreak(){
 
-const panel = document.getElementById("streakPanel");
+  const panel =
+    document.getElementById("streakPanel");
 
-if(panel.style.display === "block"){
 
-panel.style.display = "none";
+  if(
+    panel.classList.contains("show")
+  ){
 
-}else{
+    panel.classList.remove("show");
 
-panel.style.display = "block";
-updateStreakPanel();
+  }
+
+  else{
+
+    panel.classList.add("show");
+
+    updateStreakPanel();
+
+  }
 
 }
 
-}
 
-
-/* ===== UPDATE PANEL ===== */
+/* ================= PANEL MINGGU ================= */
 
 function updateStreakPanel(){
 
-const streak=calculateStreak();
+  const streak =
+    calculateStreak();
 
 
-document.getElementById(
-"streakNumber"
-).innerText=
-streak+" Hari";
+  document.getElementById(
+    "streakNumber"
+  ).innerText =
+    streak + " Hari";
 
 
-const weekDays=
-document.getElementById(
-"weekDays"
-);
+  const weekDays =
+    document.getElementById("weekDays");
 
 
-const names=[
-"Sen",
-"Sel",
-"Rab",
-"Kam",
-"Jum",
-"Sab",
-"Min"
-];
+  const names = [
+    "Sen",
+    "Sel",
+    "Rab",
+    "Kam",
+    "Jum",
+    "Sab",
+    "Min"
+  ];
 
 
-const today=new Date();
+  const today =
+    new Date();
 
-const jsDay=today.getDay();
-
-
-const todayIndex=
-jsDay===0
-?6
-:jsDay-1;
+  today.setHours(0,0,0,0);
 
 
-const studyDates=
-getStudyDates();
+  const jsDay =
+    today.getDay();
 
 
-let html="";
+  const todayIndex =
+    jsDay === 0
+      ? 6
+      : jsDay - 1;
 
 
-for(
-let i=0;
-i<7;
-i++
-){
-
-const date=new Date(today);
+  const studyDates =
+    getStudyDates();
 
 
-date.setDate(
-today.getDate()-
-(todayIndex-i)
-);
+  let html = "";
 
 
-const key=getDateKey(date);
+  for(
+    let i = 0;
+    i < 7;
+    i++
+  ){
 
-const studied=
-studyDates.includes(key);
-
-const isToday=
-key===getToday();
+    const date =
+      new Date(today);
 
 
-html+=`
+    date.setDate(
+      today.getDate() -
+      (todayIndex - i)
+    );
 
-<div class="day
-${studied?"active":""}
-${isToday?"today":""}">
 
-<span class="day-name">
-${names[i]}
-</span>
+    const key =
+      getDateKey(date);
 
-<span class="day-fire">
-${studied?"🔥":"○"}
-</span>
 
-</div>
+    const studied =
+      studyDates.includes(key);
 
-`;
+
+    const isToday =
+      key === getToday();
+
+
+    html += `
+
+      <div class="day
+        ${studied ? "active" : ""}
+        ${isToday ? "today" : ""}
+      ">
+
+        <span class="day-name">
+          ${names[i]}
+        </span>
+
+        <span class="day-fire">
+          ${studied ? "🔥" : "○"}
+        </span>
+
+      </div>
+
+    `;
+
+  }
+
+
+  weekDays.innerHTML =
+    html;
+
+
+  document.getElementById(
+    "weekStatus"
+  ).innerText =
+    streak > 0
+      ? "🔥 Pertahankan streak kamu!"
+      : "Mulai belajar hari ini untuk menyalakan streak!";
 
 }
 
 
-weekDays.innerHTML=html;
-
-
-document.getElementById(
-"weekStatus"
-).innerText=
-
-streak>0
-?"🔥 Pertahankan streak kamu!"
-:"Mulai belajar hari ini untuk menyalakan streak!";
-
-}
-
-
-/* ===== START ===== */
+/* ================= MULAI ================= */
 
 updateStreak();
 
 </script>
-
 
 </body>
 </html>
