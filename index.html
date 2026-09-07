@@ -746,7 +746,9 @@ button{
       menjelaskan materi dengan bahasa sederhana.
     </p>
 
-    <button onclick="comingSoon('NATI AI')">
+    <button onclick="openNati()">
+  Tanya NATI
+</button>
       Tanya NATI
     </button>
 
@@ -812,7 +814,38 @@ function comingSoon(feature){
   );
 
 }
+/* ================= NATI AI ================= */
 
+function openNati(){
+  const message = prompt(
+    "🤖 NATI — AI Study Buddy\n\nTulis pertanyaan belajar kamu:"
+  );
+
+  if(!message || !message.trim()){
+    return;
+  }
+
+  fetch("https://natifyai.osissmanja256.workers.dev", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: message
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.reply){
+      alert("🤖 NATI:\n\n" + data.reply);
+    }else{
+      alert("⚠️ NATI mengalami masalah:\n\n" + (data.error || "Tidak ada jawaban."));
+    }
+  })
+  .catch(error => {
+    alert("⚠️ NATI gagal terhubung.\n\nCoba lagi sebentar.");
+  });
+}
 
 /* ================= TANGGAL ================= */
 
