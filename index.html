@@ -1031,20 +1031,15 @@ document.getElementById(
 
 function openStreak(){
 
-const panel=
-document.getElementById(
-"streakPanel"
-);
+const panel = document.getElementById("streakPanel");
 
+if(panel.style.display === "block"){
 
-if(panel.classList.contains("show")){
-
-panel.classList.remove("show");
+panel.style.display = "none";
 
 }else{
 
-panel.classList.add("show");
-
+panel.style.display = "block";
 updateStreakPanel();
 
 }
