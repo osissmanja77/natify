@@ -1,232 +1,557 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATIFY — Your TKA Study Buddy</title>
 
-  <title>NATIFY — Your TKA Study Buddy</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+body{
+font-family:Arial,sans-serif;
+background:#fff9e8;
+color:#202020;
+line-height:1.6;
+}
 
-    body {
-      background: #fffaf0;
-      color: #202020;
-    }
+header{
+padding:25px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .hero {
-      min-height: 100vh;
-      padding: 28px 8%;
-      background: linear-gradient(135deg, #fffaf0, #fff1a8);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.logo{
+font-size:30px;
+font-weight:800;
+}
 
-    .logo {
-      position: absolute;
-      top: 28px;
-      left: 8%;
-      font-size: 30px;
-      font-weight: 800;
-      color: #202020;
-    }
+.logo span{color:#e0ae00}
 
-    .logo span {
-      color: #f5c400;
-    }
+nav a{
+text-decoration:none;
+color:#333;
+margin-left:18px;
+font-weight:bold;
+}
 
-    .badge {
-      display: inline-block;
-      width: fit-content;
-      background: #fff;
-      border: 1px solid #eadb86;
-      padding: 8px 15px;
-      border-radius: 30px;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+.hero{
+padding:55px 7% 80px;
+max-width:1000px;
+}
 
-    h1 {
-      font-size: clamp(45px, 8vw, 80px);
-      line-height: 1;
-      max-width: 800px;
-      margin-bottom: 22px;
-    }
+.badge{
+display:inline-block;
+background:white;
+border:2px solid #eadc91;
+border-radius:30px;
+padding:10px 18px;
+margin-bottom:25px;
+}
 
-    h1 span {
-      color: #e0ae00;
-    }
+h1{
+font-size:clamp(45px,9vw,80px);
+line-height:1;
+margin-bottom:25px;
+}
 
-    .description {
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 620px;
-      color: #555;
-      margin-bottom: 30px;
-    }
+.yellow{color:#e0ae00}
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.hero p{
+font-size:19px;
+color:#555;
+max-width:700px;
+margin-bottom:28px;
+}
 
-    .button {
-      text-decoration: none;
-      padding: 14px 23px;
-      border-radius: 12px;
-      font-weight: bold;
-      display: inline-block;
-    }
+button{
+border:0;
+border-radius:16px;
+padding:15px 22px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
 
-    .primary {
-      background: #202020;
-      color: white;
-    }
+.primary{
+background:#222;
+color:white;
+}
 
-    .secondary {
-      background: white;
-      color: #202020;
-      border: 1px solid #ddd;
-    }
+.secondary{
+background:white;
+border:2px solid #ddd;
+margin-left:8px;
+}
 
-    .features {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      max-width: 1000px;
-    }
+.section{
+padding:45px 7%;
+}
 
-    .card {
-      background: rgba(255,255,255,0.8);
-      padding: 20px;
-      border-radius: 18px;
-      border: 1px solid #eadf9d;
-    }
+.section h2{
+font-size:30px;
+margin-bottom:20px;
+}
 
-    .icon {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
 
-    .card h3 {
-      margin-bottom: 7px;
-    }
+.card{
+background:white;
+border:1px solid #eee2b4;
+border-radius:22px;
+padding:22px;
+}
 
-    .card p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+.card h3{
+margin-bottom:8px;
+}
 
-    .footer {
-      margin-top: 50px;
-      font-size: 13px;
-      color: #777;
-    }
+.card p{
+color:#666;
+margin-bottom:12px;
+}
 
-    @media (max-width: 700px) {
-      .hero {
-        padding: 90px 25px 40px;
-      }
+.icon{
+font-size:32px;
+margin-bottom:8px;
+}
 
-      .logo {
-        left: 25px;
-      }
+.dashboard{
+display:none;
+}
 
-      .features {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+.welcome{
+background:#222;
+color:white;
+border-radius:25px;
+padding:28px;
+margin-bottom:18px;
+}
 
-    @media (max-width: 450px) {
-      .features {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:25px;
+}
+
+.streak{
+font-size:35px;
+font-weight:800;
+color:#e0ae00;
+}
+
+.subjects{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.subject{
+background:#fff1a8;
+padding:10px 15px;
+border-radius:14px;
+font-weight:bold;
+}
+
+.nati{
+background:#fff1a8;
+border-radius:25px;
+padding:25px;
+margin-top:20px;
+}
+
+footer{
+text-align:center;
+padding:35px 15px;
+color:#777;
+}
+
+@media(max-width:650px){
+nav{display:none}
+.grid,.stats{grid-template-columns:1fr}
+.secondary{margin-left:0;margin-top:10px}
+}
+</style>
 </head>
 
 <body>
 
-  <section class="hero">
+<header>
+<div class="logo">NAT<span>IFY</span></div>
 
-    <div class="logo">
-      NAT<span>IFY</span>
-    </div>
+<nav>
+<a href="#materi">Materi</a>
+<a href="#latihan">Latihan</a>
+<a href="#nati">NATI</a>
+</nav>
+</header>
 
-    <div class="badge">
-      💛 Your TKA Study Buddy
-    </div>
 
-    <h1>
-      Belajar TKA<br>
-      jadi lebih <span>terarah.</span>
-    </h1>
+<!-- HALAMAN DEPAN -->
 
-    <p class="description">
-      NATIFY membantu siswa SMA mempersiapkan TKA melalui
-      materi, latihan soal, try out, analisis kemampuan,
-      dan AI Study Buddy dalam satu tempat.
-    </p>
+<div id="home">
 
-    <div class="buttons">
-      <a href="#" class="button primary">Mulai Belajar →</a>
-      <a href="#" class="button secondary">Kenali NATIFY</a>
-    </div>
+<section class="hero">
 
-    <div class="features">
+<div class="badge">💛 Your TKA Study Buddy</div>
 
-      <div class="card">
-        <div class="icon">📚</div>
-        <h3>Materi</h3>
-        <p>
-          Materi belajar yang disusun berdasarkan
-          topik dan kisi-kisi TKA.
-        </p>
-      </div>
+<h1>
+Belajar TKA<br>
+jadi lebih <span class="yellow">terarah.</span>
+</h1>
 
-      <div class="card">
-        <div class="icon">📝</div>
-        <h3>Latihan Soal</h3>
-        <p>
-          Latihan soal untuk menguji pemahaman
-          setelah mempelajari materi.
-        </p>
-      </div>
+<p>
+NATIFY membantu siswa SMA yang bingung mempersiapkan TKA
+dengan materi yang mudah dipahami, latihan soal, soal tahun lalu,
+kisi-kisi, analisis kemampuan, dan AI Study Buddy.
+</p>
 
-      <div class="card">
-        <div class="icon">⏱️</div>
-        <h3>Try Out</h3>
-        <p>
-          Simulasi ujian dengan waktu dan
-          hasil yang dapat dianalisis.
-        </p>
-      </div>
+<button class="primary" onclick="showDashboard()">
+Mulai Belajar →
+</button>
 
-      <div class="card">
-        <div class="icon">🤖</div>
-        <h3>Ask NATI</h3>
-        <p>
-          AI Study Buddy untuk membantu
-          menjelaskan materi dan menemani belajar.
-        </p>
-      </div>
+<button class="secondary" onclick="document.getElementById('about').scrollIntoView()">
+Kenali NATIFY
+</button>
 
-    </div>
+</section>
 
-    <div class="footer">
-      © 2026 NATIFY · Initiated by Natasya D.
-    </div>
 
-  </section>
+<section class="section" id="about">
+
+<h2>Kenapa NATIFY?</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Materi Mudah Dipahami</h3>
+<p>
+Penjelasan dibuat dengan bahasa sederhana,
+seperti sedang dijelaskan oleh teman belajar.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📝</div>
+<h3>Latihan Berdasarkan Materi</h3>
+<p>
+Setelah belajar materi, siswa bisa langsung
+mencoba soal yang sesuai.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Kisi-kisi TKA</h3>
+<p>
+Siswa dapat mengetahui apa saja yang perlu
+dipelajari dan menentukan prioritas.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>NATI Study Buddy</h3>
+<p>
+Teman belajar untuk membantu menjelaskan
+materi ketika siswa merasa bingung.
+</p>
+</div>
+
+</div>
+</section>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard" id="dashboard">
+
+<section class="section">
+
+<div class="welcome">
+<h2>Halo, pejuang TKA! 👋</h2>
+<p>Tenang. Kita belajar sedikit demi sedikit hari ini. 💛</p>
+</div>
+
+
+<div class="stats">
+
+<div class="card">
+<h3>🔥 Streak</h3>
+
+<div class="streak">
+<span id="streak">0</span> hari
+</div>
+
+<p id="streakText">
+Belajar hari ini untuk menyalakan streak!
+</p>
+
+<button class="primary" onclick="studyToday()">
+Belajar Hari Ini
+</button>
+</div>
+
+
+<div class="card">
+<h3>🎯 Target Hari Ini</h3>
+
+<p>☐ Pelajari 1 materi</p>
+<p>☐ Kerjakan 5 soal</p>
+<p>☐ Pahami kesalahanmu</p>
+
+</div>
+
+
+<div class="card">
+<h3>📊 Progress</h3>
+
+<p id="progress">
+Belum ada data belajar.
+</p>
+
+</div>
+
+</div>
+
+
+<section id="materi">
+
+<h2>📚 Pilih Materi</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📐</div>
+<h3>Matematika</h3>
+<p>Materi TKA Matematika dari dasar sampai latihan.</p>
+<button onclick="comingSoon('Matematika')">Mulai</button>
+</div>
+
+<div class="card">
+<div class="icon">📖</div>
+<h3>Bahasa Indonesia</h3>
+<p>Pelajari konsep dengan penjelasan yang sederhana.</p>
+<button onclick="comingSoon('Bahasa Indonesia')">Mulai</button>
+</div>
+
+<div class="card">
+<div class="icon">🇬🇧</div>
+<h3>Bahasa Inggris</h3>
+<p>Belajar konsep, teks, dan latihan soal.</p>
+<button onclick="comingSoon('Bahasa Inggris')">Mulai</button>
+</div>
+
+<div class="card">
+<div class="icon">💰</div>
+<h3>Ekonomi</h3>
+<p>Pahami konsep ekonomi dengan contoh sehari-hari.</p>
+<button onclick="comingSoon('Ekonomi')">Mulai</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="latihan">
+
+<h2>📝 Latihan & Soal</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🧩</div>
+<h3>Latihan Per Materi</h3>
+<p>Soal berdasarkan materi yang sedang dipelajari.</p>
+<button onclick="comingSoon('Latihan soal')">Mulai Latihan</button>
+</div>
+
+<div class="card">
+<div class="icon">🕰️</div>
+<h3>Soal Tahun Lalu</h3>
+<p>Kumpulan soal dari tahun sebelumnya.</p>
+<button onclick="comingSoon('Soal tahun lalu')">Lihat Soal</button>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Kisi-kisi TKA</h3>
+<p>Topik yang perlu dipelajari untuk TKA tahun ini.</p>
+<button onclick="comingSoon('Kisi-kisi TKA')">Lihat Kisi-kisi</button>
+</div>
+
+<div class="card">
+<div class="icon">🧪</div>
+<h3>Try Out</h3>
+<p>Simulasi TKA dengan hasil dan analisis.</p>
+<button onclick="comingSoon('Try Out')">Segera Hadir</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="nati">
+
+<div class="nati">
+
+<h2>🤖 Tanya NATI</h2>
+
+<p>
+Bingung sama materi? Ceritakan bagian yang belum kamu pahami.
+</p>
+
+<br>
+
+<p>
+<strong>Contoh:</strong><br>
+“NATI, aku nggak ngerti fungsi. Jelasin dari paling dasar dong.”
+</p>
+
+<br>
+
+<button class="primary" onclick="comingSoon('NATI AI')">
+Tanya NATI
+</button>
+
+</div>
+
+</section>
+
+</section>
+
+</div>
+
+
+<footer>
+© 2026 NATIFY · Your TKA Study Buddy 💛
+</footer>
+
+
+<script>
+
+function showDashboard(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("dashboard").style.display="block";
+
+updateStreak();
+
+window.scrollTo(0,0);
+
+}
+
+
+function getToday(){
+
+let d=new Date();
+
+return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+
+}
+
+
+function studyToday(){
+
+let today=getToday();
+
+let last=localStorage.getItem("natifyLastStudy");
+
+let streak=Number(localStorage.getItem("natifyStreak"))||0;
+
+if(last===today){
+
+document.getElementById("streakText").innerText=
+"🔥 Kamu sudah belajar hari ini!";
+
+return;
+
+}
+
+if(last){
+
+let old=new Date(last);
+
+let now=new Date();
+
+let difference=Math.floor(
+(now-old)/(1000*60*60*24)
+);
+
+if(difference===1){
+
+streak++;
+
+}else if(difference>=3){
+
+streak=1;
+
+}else if(difference>=2){
+
+streak=1;
+
+}
+
+}else{
+
+streak=1;
+
+}
+
+localStorage.setItem("natifyStreak",streak);
+
+localStorage.setItem("natifyLastStudy",today);
+
+updateStreak();
+
+document.getElementById("progress").innerText=
+"Kamu sudah menyelesaikan sesi belajar hari ini! 🎉";
+
+alert("🔥 Streak hari ini aktif! Semangat belajar!");
+
+}
+
+
+function updateStreak(){
+
+let streak=Number(localStorage.getItem("natifyStreak"))||0;
+
+let last=localStorage.getItem("natifyLastStudy");
+
+document.getElementById("streak").innerText=streak;
+
+if(last===getToday()){
+
+document.getElementById("streakText").innerText=
+"🔥 Streak aktif hari ini!";
+
+}
+
+}
+
+
+function comingSoon(feature){
+
+alert(
+"💛 "+feature+
+" sedang kita siapkan.\n\nNanti bagian ini akan diisi dengan konten TKA yang sebenarnya."
+);
+
+}
+
+</script>
 
 </body>
 </html>
